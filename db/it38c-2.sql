@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 13, 2025 at 07:56 AM
+-- Generation Time: Feb 13, 2025 at 08:24 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -33,6 +33,14 @@ CREATE TABLE `login_logs` (
   `login_time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `login_logs`
+--
+
+INSERT INTO `login_logs` (`log_id`, `user_id`, `login_time`) VALUES
+(1, 0, '2025-02-13 14:59:22'),
+(2, 0, '2025-02-13 15:01:03');
+
 -- --------------------------------------------------------
 
 --
@@ -47,6 +55,14 @@ CREATE TABLE `users` (
   `last_login` datetime DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `user_type`, `last_login`, `created_at`) VALUES
+(0, 'user', '$2y$10$GqglR4084ronrZWfiSsmHuS37iz9YgdqxQGHLyg1951Jtx6GzwdWm', 'user', '2025-02-13 15:01:03', '2025-02-13 06:59:14'),
+(0, 'roger', '$2y$10$d5vLmuPQAAcPBOdAvY0Q4O9LoHAXc8mzt6RNQ.VEgoQQCrJw/K.kO', 'admin', '2025-02-13 15:01:03', '2025-02-13 07:00:56');
 
 --
 -- Indexes for dumped tables
@@ -66,7 +82,7 @@ ALTER TABLE `login_logs`
 -- AUTO_INCREMENT for table `login_logs`
 --
 ALTER TABLE `login_logs`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
